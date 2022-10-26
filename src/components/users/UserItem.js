@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const UserItem = ({ user: { login, avatar_url } }) => {
   return (
@@ -8,6 +9,16 @@ const UserItem = ({ user: { login, avatar_url } }) => {
           <div className="rounded-full shadow w-14 h-14">
             <img src={avatar_url} alt="user avatar" />
           </div>
+        </div>
+
+        <div>
+          <h2 className="card-title">{login}</h2>
+          <Link
+            to={`/users/${login}`}
+            className="text-base-content text-opacity-40"
+          >
+            Visit Profile
+          </Link>
         </div>
       </div>
     </div>
